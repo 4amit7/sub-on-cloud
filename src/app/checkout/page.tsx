@@ -228,8 +228,8 @@ export default function CheckoutPage() {
           </div>
 
           <div className="text-sm text-gray-600">
-            <p>We'll start preparing your order shortly.</p>
-            <p>You'll receive updates on WhatsApp.</p>
+            <p>{"We'll start preparing your order shortly."}</p>
+            <p>{"You'll receive updates on WhatsApp."}</p>
           </div>
 
           <Link
@@ -302,14 +302,14 @@ export default function CheckoutPage() {
         {orderStatus === "approved" && paymentInitiated && (
           <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
             <p className="text-blue-800 font-medium">💳 Payment initiated</p>
-            <p className="text-blue-700 text-sm mt-1">Complete your UPI payment, then click "I have completed payment" to confirm.</p>
+            <p className="text-blue-700 text-sm mt-1">{'Complete your UPI payment, then click "I have completed payment" to confirm.'}</p>
           </div>
         )}
 
         {orderStatus === "rejected" && (
           <div className="rounded-lg bg-red-50 border border-red-200 p-4">
             <p className="text-red-800 font-medium">❌ Order rejected</p>
-            <p className="text-red-700 text-sm mt-1">We're sorry, but your order cannot be processed at this time. Please contact us for assistance.</p>
+            <p className="text-red-700 text-sm mt-1">{"We're sorry, but your order cannot be processed at this time. Please contact us for assistance."}</p>
           </div>
         )}
 
