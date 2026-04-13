@@ -14,7 +14,7 @@ export async function GET() {
     const db = await getDb();
     const collection = db.collection(COLLECTION_NAME);
 
-    const menu = await collection.findOne({});
+    const menu: any = await collection.findOne({});
 
     if (!menu) {
       return NextResponse.json(DEFAULT_MENU, {
@@ -47,9 +47,9 @@ export async function POST(request: Request) {
     const db = await getDb();
     const collection = db.collection(COLLECTION_NAME);
 
-    let menu = await collection.findOne({});
+    let menu: any = await collection.findOne({});
     if (!menu) {
-      menu = DEFAULT_MENU;
+      menu = DEFAULT_MENU as any;
     }
 
     const item = {
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       item
     );
 
-    const result = await collection.findOneAndUpdate(
+    const result: any = await collection.findOneAndUpdate(
       {},
       { $set: { categories } },
       { upsert: true, returnDocument: "after" }
@@ -100,9 +100,9 @@ export async function PUT(request: Request) {
     const db = await getDb();
     const collection = db.collection(COLLECTION_NAME);
 
-    let menu = await collection.findOne({});
+    let menu: any = await collection.findOne({});
     if (!menu) {
-      menu = DEFAULT_MENU;
+      menu = DEFAULT_MENU as any;
     }
 
     const categories = (menu as any).categories || [];
@@ -127,7 +127,7 @@ export async function PUT(request: Request) {
       description: body.description
     });
 
-    const result = await collection.findOneAndUpdate(
+    const result: any = await collection.findOneAndUpdate(
       {},
       { $set: { categories: updatedCategories } },
       { upsert: true, returnDocument: "after" }
@@ -160,9 +160,9 @@ export async function DELETE(request: Request) {
     const db = await getDb();
     const collection = db.collection(COLLECTION_NAME);
 
-    let menu = await collection.findOne({});
+    let menu: any = await collection.findOne({});
     if (!menu) {
-      menu = DEFAULT_MENU;
+      menu = DEFAULT_MENU as any;
     }
 
     const categories = ((menu as any).categories || []).map((category: any) => ({
@@ -170,7 +170,7 @@ export async function DELETE(request: Request) {
       items: category.items.filter((item: any) => item.id !== body.id)
     }));
 
-    const result = await collection.findOneAndUpdate(
+    const result: any = await collection.findOneAndUpdate(
       {},
       { $set: { categories } },
       { upsert: true, returnDocument: "after" }

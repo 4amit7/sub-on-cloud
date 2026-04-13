@@ -8,7 +8,7 @@ export function BestSellersSection() {
 
   const title = content?.bestSellers?.title || "Best Sellers";
   const subtitle = content?.bestSellers?.subtitle || "Most-loved picks from the Sub On Cloud kitchen";
-  const items = content?.bestSellers?.items || [];
+  const items = (content?.bestSellers?.items || []) as any[];
 
   return (
     <section
@@ -24,7 +24,7 @@ export function BestSellersSection() {
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {items.map((item, index) => (
+          {items.map((item: any, index) => (
             <article
               key={index}
               className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6"

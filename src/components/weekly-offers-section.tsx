@@ -8,7 +8,7 @@ export function WeeklyOffersSection() {
 
   const title = content?.weeklyOffers?.title || "Weekly Offers";
   const subtitle = content?.weeklyOffers?.subtitle || "Special deals and limited-time offers";
-  const items = content?.weeklyOffers?.items || [];
+  const items = (content?.weeklyOffers?.items || []) as any[];
 
   return (
     <section
@@ -24,7 +24,7 @@ export function WeeklyOffersSection() {
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {items.map((item, index) => (
+          {items.map((item: any, index) => (
             <article
               key={index}
               className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6"

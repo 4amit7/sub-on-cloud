@@ -27,7 +27,7 @@ export async function GET(request: Request) {
 
     if (id) {
       // Get single order by ID
-      const order = await collection.findOne({ _id: new ObjectId(id) });
+      const order: any = await collection.findOne({ _id: new ObjectId(id) });
       
       if (!order) {
         return NextResponse.json(
@@ -133,11 +133,11 @@ export async function PATCH(req: Request) {
     if (paymentStatus === "paid") {
       try {
         // Get order details
-        const order = await collection.findOne({ _id: new ObjectId(id) });
+        const order: any = await collection.findOne({ _id: new ObjectId(id) });
         if (order) {
           // Get settings for WhatsApp number
           const settingsCollection = db.collection("settings");
-          const settings = await settingsCollection.findOne({});
+          const settings: any = await settingsCollection.findOne({});
 
           const whatsappNumber = settings?.whatsapp || "919999999999";
           

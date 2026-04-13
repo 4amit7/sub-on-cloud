@@ -13,9 +13,9 @@ export async function GET() {
     const db = await getDb();
     const collection = db.collection(COLLECTION_NAME);
 
-    const settings = await collection.findOne({});
+    const settings: any = await collection.findOne({});
 
-    const responseData = normalizeSettings(settings || {});
+    const responseData = normalizeSettings((settings || {}) as any);
     return NextResponse.json(responseData, {
       headers: { "Cache-Control": "no-store" }
     });
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     const collection = db.collection(COLLECTION_NAME);
 
     // Upsert to maintain single document
-    const result = await collection.findOneAndUpdate(
+    const result: any = await collection.findOneAndUpdate(
       {},
       { $set: validation.data },
       { upsert: true, returnDocument: "after" }
