@@ -1,0 +1,72 @@
+{
+  "categories": [
+    {
+      "name": "Subs",
+      "items": [
+        {
+          "name": "Peri Peri Paneer Sub",
+          "price": 120,
+          "image": "/images/sub1.svg",
+          "description": "Spicy grilled paneer sub"
+        },
+        {
+          "name": "Tandoori Veggie Sub",
+          "price": 135,
+          "image": "/images/sub2.svg",
+          "description": "Toasted bread with tandoori veggies and creamy sauce"
+        }
+      ]
+    },
+    {
+      "name": "Wraps",
+      "items": [
+        {
+          "name": "Smoky Chicken Wrap",
+          "price": 160,
+          "image": "/images/wrap1.svg",
+          "description": "Juicy chicken wrap with crunchy slaw and smoky dressing"
+        },
+        {
+          "name": "Falafel Fresh Wrap",
+          "price": 145,
+          "image": "/images/wrap2.svg",
+          "description": "Falafel, lettuce and tangy yogurt sauce in a soft wrap"
+        }
+      ]
+    },
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "name": "Crispy Veg Burger",
+          "price": 150,
+          "image": "/images/burger1.svg",
+          "description": "Golden veg patty burger with lettuce and signature sauce"
+        },
+        {
+          "name": "Fiery Chicken Burger",
+          "price": 175,
+          "image": "/images/burger2.svg",
+          "description": "Spicy chicken burger with cheddar and roasted peppers"
+        }
+      ]
+    },
+    {
+      "name": "Beverages",
+      "items": [
+        {
+          "name": "Mint Lemon Cooler",
+          "price": 80,
+          "image": "/images/beverage1.svg",
+          "description": "Fresh mint and lemon cooler served chilled"
+        },
+        {
+          "name": "Classic Cold Coffee",
+          "price": 95,
+          "image": "/images/beverage2.svg",
+          "description": "Creamy cold coffee with a rich roasted finish"
+        }
+      ]
+    }
+  ]
+}
